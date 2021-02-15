@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Employee from "./Employee";
-import API from "../utils/API"
+import Employee from "../Employee";
+import API from "../../utils/API"
 
 class Table extends Component{
     state = {
