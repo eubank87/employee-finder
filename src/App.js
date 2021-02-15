@@ -4,7 +4,7 @@ import Table from './components/Table';
 import Header from "./components/Header"
 
 function App() {
-  return (<div>
+  return (<div className="main">
             <div>
               <Header/>
             </div>
