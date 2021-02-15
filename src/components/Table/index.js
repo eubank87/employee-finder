@@ -27,7 +27,8 @@ class Table extends Component{
                     </tr>
                 </thead>
                 <tbody>
-                    {this.state.employees.map(employee=> <Employee 
+                    {this.state.employees.map(employee=> <Employee
+                        key= {employee.login.uuid} 
                         photo= {employee.picture.thumbnail}
                         firstName= {employee.name.first}
                         lastName= {employee.name.last}
