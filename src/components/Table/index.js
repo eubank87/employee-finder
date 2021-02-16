@@ -20,6 +20,16 @@ class Table extends Component{
         this.setState({sortedEmployees: sorted})
     }
 
+    handleLastName = ()=>{
+        const sorted = this.state.sortedEmployees.sort((a, b)=> a.name.last > b.name.last ? 1: -1)
+        this.setState({sortedEmployees: sorted})
+    }
+
+    handleLocation = ()=>{
+        const sorted = this.state.sortedEmployees.sort((a, b)=> a.location.state > b.location.state ? 1: -1)
+        this.setState({sortedEmployees: sorted})
+    }
+
 
     render(){
         return(<div>
@@ -34,8 +44,8 @@ class Table extends Component{
                     <tr className="tablehead">
                         <th scope="col">Photo</th>
                         <th scope="col" onClick={this.handleFirstName} className="name.first">First Name</th>
-                        <th scope="col">Last Name</th>
-                        <th scope="col">Location</th>
+                        <th scope="col" onClick={this.handleLastName} className="name.last">Last Name</th>
+                        <th scope="col" onClick={this.handleLocation} className="location.state">Location</th>
                         <th scope="col">Email</th>
                         <th scope="col">Phone</th>
                     </tr>
