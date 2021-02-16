@@ -16,17 +16,38 @@ class Table extends Component{
     }
 
     handleFirstName = ()=>{
-        const sorted = this.state.sortedEmployees.sort((a, b)=> a.name.first > b.name.first ? 1: -1)
+        const sorted = this.state.sortedEmployees.sort((a, b)=>{
+            if(a.name.first > b.name.first){
+                return 1
+            } if(a.name.first < b.name.first){
+                return -1
+            }
+            return 0
+        })
         this.setState({sortedEmployees: sorted})
     }
 
     handleLastName = ()=>{
-        const sorted = this.state.sortedEmployees.sort((a, b)=> a.name.last > b.name.last ? 1: -1)
+        const sorted = this.state.sortedEmployees.sort((a, b)=>{
+            if(a.name.last > b.name.last){
+                return 1
+            } if(a.name.last < b.name.last){
+                return -1
+            }
+            return 0
+        })
         this.setState({sortedEmployees: sorted})
     }
 
     handleLocation = ()=>{
-        const sorted = this.state.sortedEmployees.sort((a, b)=> a.location.state > b.location.state ? 1: -1)
+        const sorted = this.state.sortedEmployees.sort((a, b)=>{
+            if(a.location.state > b.location.state){
+                return 1
+            } if(a.location.state < b.location.state){
+                return -1
+            }
+            return 0
+        })
         this.setState({sortedEmployees: sorted})
     }
 
