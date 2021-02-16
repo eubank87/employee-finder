@@ -54,19 +54,19 @@ class Table extends Component{
 
     render(){
         return(<div>
-            <div>
-            <form className="form-inline" >
-                <input className="form-control mr-sm-2" type="text" placeholder="Employee Name" name="search"/>
-                <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+            <div className="searchForm">
+                <form className="form-inline" >
+                    <input className="form-control mr-sm-2" type="text" placeholder="Employee Name" name="search"/>
+                    <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
             </div>
-            <table className="table table-striped">
+            <table className="table table-dark table-striped">
                 <thead className="thead">
                     <tr className="tablehead">
                         <th scope="col">Photo</th>
-                        <th scope="col" onClick={this.handleFirstName} className="name.first">First Name</th>
-                        <th scope="col" onClick={this.handleLastName} className="name.last">Last Name</th>
-                        <th scope="col" onClick={this.handleLocation} className="location.state">Location</th>
+                        <th scope="col" onClick={this.handleFirstName} className="firstName">First Name</th>
+                        <th scope="col" onClick={this.handleLastName} className="lastName">Last Name</th>
+                        <th scope="col" onClick={this.handleLocation} className="locationState">Location</th>
                         <th scope="col">Email</th>
                         <th scope="col">Phone</th>
                     </tr>

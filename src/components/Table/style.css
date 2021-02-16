@@ -1,0 +1,13 @@
+.searchForm{
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-right: 1%;
+}
+
+.firstName:hover, .lastName:hover, .locationState:hover{
+    background-color: rgba(85, 11, 146, 0.863);
+    cursor: pointer;
+}
+

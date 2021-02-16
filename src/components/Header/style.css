@@ -1,6 +1,10 @@
 .header{
-    background-color: #dad;
+    background-color: rgba(85, 11, 146, 0.863);
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+
+h1, p{
+    color:#eee;
 }
