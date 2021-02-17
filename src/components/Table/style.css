@@ -11,3 +11,8 @@
     cursor: pointer;
 }
 
+.ptag{
+    color: rgba(85, 11, 146, 0.863);
+    padding-right: 1%;
+    padding-top: 1%;
+}

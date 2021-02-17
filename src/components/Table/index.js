@@ -74,6 +74,7 @@ class Table extends Component{
     render(){
         return(<div>
             <div className="searchForm">
+                <p className="ptag">Or, you can type in a name to search for a specific employee.</p>
                 <form className="form-inline" onSubmit={this.handleSubmit}>
                     <input onChange={this.handleInputChange} className="form-control mr-sm-2" type="text" placeholder="Employee Name" name="search"/>
                     <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
