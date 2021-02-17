@@ -15,6 +15,15 @@ class Table extends Component{
         .catch(err => console.log(err));
     }
 
+    handleInputChange = event => {
+        const filter = event.target.value;
+        const filtered = this.state.employees.filter(item =>{
+            let values = Object.values(item).join("").toLowerCase();
+            return values.indexOf(filter.toLowerCase()) !== -1;
+        })
+        this.setState({sortedEmployees: filtered})
+    };
+
     handleFirstName = ()=>{
         const sorted = this.state.sortedEmployees.sort((a, b)=>{
             if(a.name.first > b.name.first){
@@ -51,12 +60,22 @@ class Table extends Component{
         this.setState({sortedEmployees: sorted})
     }
 
+    handleSubmit = event =>{
+        event.preventDefault();
+
+        const employeeFilter = this.state.employees.filter((employee)=>{
+            const fullName = `${employee.name.first} ${employee.name.last}`;
+            return fullName.toLowerCase().includes(this.state.search.toLowerCase())
+        })
+        this.setState({sortedEmployees: employeeFilter})
+    }
+
 
     render(){
         return(<div>
             <div className="searchForm">
-                <form className="form-inline" >
-                    <input className="form-control mr-sm-2" type="text" placeholder="Employee Name" name="search"/>
+                <form className="form-inline" onSubmit={this.handleSubmit}>
+                    <input onChange={this.handleInputChange} className="form-control mr-sm-2" type="text" placeholder="Employee Name" name="search"/>
                     <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>
@@ -72,8 +91,8 @@ class Table extends Component{
                     </tr>
                 </thead>
                 <tbody>
-                    {this.state.employees.map(employee=> <Employee
-                        key= {employee.login.uuid} 
+                    {this.state.sortedEmployees.map((employee, index)=> <Employee
+                        key= {index} 
                         photo= {employee.picture.thumbnail}
                         firstName= {employee.name.first}
                         lastName= {employee.name.last}
